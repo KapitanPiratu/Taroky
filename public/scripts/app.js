@@ -1,7 +1,12 @@
+import { login } from './login.js'
+
 const app = Vue.createApp({
     template: `
-        <div></div>
+        <div>
+            <Login />
+        </div>
     `
 });
 
+app.component('Login', login);
 app.mount('#app');
