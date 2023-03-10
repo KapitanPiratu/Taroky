@@ -1,9 +1,13 @@
-const login = {
+const LogIn = {
     template: `
         <div>
-            <input v-model="user" type="text">
-            <input v-model="password" type="text">
-            <button @click="login">Log In</button>
+            <h1>Log In</h1>
+            nickname or email <br>
+            <input v-model="user" type="text"> <br>
+            password <br>
+            <input v-model="password" type="text"> <br> <br>
+            <button @click="login">Log In</button> <br> 
+            <router-link to="/signup">sign up</router-link>
         </div>
     `,
     methods: {
@@ -23,4 +27,4 @@ const login = {
     }
 }
 
-export { login }
+export { LogIn }

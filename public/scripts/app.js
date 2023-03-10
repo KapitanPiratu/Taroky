@@ -1,12 +1,23 @@
-import { login } from './login.js'
+import { NotFound } from './notfound.js'
+import { LogIn } from './login.js'
+import { SignUp } from './signup.js';
+
+const router = VueRouter.createRouter({
+    history: VueRouter.createWebHashHistory(),
+    routes: [
+        {path: '/:pathMatch(.*)*', component: NotFound},
+        {path: '/login', component: LogIn},
+        {path: '/signup', component: SignUp}
+    ]
+})
 
 const app = Vue.createApp({
     template: `
-        <div>
-            <Login />
-        </div>
+        <router-view></router-view>
     `
 });
 
-app.component('Login', login);
+app.use(router)
+//app.component('Login', login);
+router.push('/login')
 app.mount('#app');
